@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动物森友会</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        padding: 0 1vw;
+      }
+      body {
+        overflow: hidden;
+      }
+      #box {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg);
+      }
+      #homePage {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        padding: 2vh 0.5vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .bc {
+        background-color: #ffffff6b;
+      }
+      .bcc {
+        background-color: #ffffffa9;
+      }
+      .menu {
+        position: relative;
+        z-index: 9999;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .menu div {
+        position: relative;
+        padding: 10px 40px;
+        margin: 0 2px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.322);
+      }
+      .content {
+        margin-top: 20px;
+      }
+
+      .menu .active::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: #4c00ff transparent transparent transparent;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* 添加黄色光点粒子效果 */
+
+      /* 添加多个圆形透明发光的圆点 */
+      #box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 0, 0.2); /* 设置透明发光颜色 */
+        border-radius: 50%; /* 使其呈现圆形 */
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.8); /* 添加发光效果 */
+        animation: moveParticle1 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95); /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle1 {
+        animation: moveParticle2 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle2 {
+        animation: moveParticle3 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle3 {
+        animation: moveParticle4 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle4 {
+        animation: moveParticle5 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle5 {
+        animation: moveParticle6 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle6 {
+        animation: moveParticle7 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+      .particle7 {
+        animation: moveParticle8 5s infinite
+          cubic-bezier(0.445, 0.05, 0.55, 0.95) !important; /* 使用贝塞尔曲线定义动画时间曲线 */
+      }
+
+      /* 创建动画效果 */
+      @keyframes moveParticle1 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(50px, 0);
+        }
+      }
+
+      @keyframes moveParticle2 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-50px, 0);
+        }
+      }
+
+      @keyframes moveParticle3 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(0, 50px);
+        }
+      }
+
+      @keyframes moveParticle4 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(0, -50px);
+        }
+      }
+
+      @keyframes moveParticle5 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      @keyframes moveParticle6 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-50px, 50px);
+        }
+      }
+
+      @keyframes moveParticle7 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(50px, -50px);
+        }
+      }
+
+      @keyframes moveParticle8 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-50px, -50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h2 style="position: absolute;color: #ffffff5c;">动物森友会</h2>
+
+      <div class="menu">
+        <div onclick="showPage('home')" class="active">首页</div>
+        <div onclick="showPage('secondary')">西施惠</div>
+        <div onclick="showPage('miao')">艳后</div>
+        <div onclick="showPage('dog')">村民</div>
+        <div onclick="showPage('null')">观看背景</div>
+      </div>
+      <div class="content bc">
+        <div id="homePage" class="animate__animated animate__bounceInDown">
+          <h1 style="color: aliceblue">动物森友会</h1>
+          <img
+            src="https://w.wallhaven.cc/full/1p/wallhaven-1px77v.jpg"
+            width="500"
+            height="300"
+            alt=""
+          />
+
+          《动物森友会》
+          一款生命模拟类型游戏。在游戏中，玩家扮演一个叫做“村民/岛民代表”（むらびと，The
+          Villager）的人类角色，居住在拟人化动物村庄，并在此定居生活，开展各项活动。由于游戏玩法为开放式玩法，并未给玩家制定明确的游玩目标。因此玩家可在村庄中无拘无束的进行各项活动，可以发挥自己的创意设计该地区，捕捉稀有鱼类或昆虫等等（如：培养异色花草树木，与村民进行交谈或互赠礼物和信件等）。
+          游戏中的时间以设备时间为准，因此游戏中囊括了季节、天气和昼夜系统。在不同的日子或时间段中则有相应的节日活动（节/假日除外）、天气情况或是村庄事件随机发生（如：圣诞节派发礼物，雨季、店铺开业或打烊等）。
+          游戏的特殊之处在于其特殊的定制和搜集机制。在游戏中，玩家可根据自身需求进行定制，定制内容并不局限于人物外观或服饰，甚至也可对村庄、房屋外观、室内装潢以及居民管理进行详细定制（如：颁布法案、扩建房屋，摆放家具等）。此外，收集物品也是该系列的一大特色之一，在游玩中玩家可在探索村庄的同时，搜集村庄物品（如：种子，木头，贝壳、水果等物品）。在搜集完毕后，玩家根据个人需求将其保留或出售，以换取游戏中的货币铃钱。除外，玩家也可将其作为原材料进行加工或是将其赠送给居民。
+          游戏除单人游玩外，也可连接至互联网并透过任天堂网络（Wii、任天堂3DS和Wii
+          U）或任天堂Switch
+          Online（任天堂Switch）与其他好友一同游玩或是拜访各自村庄。除外，玩家也可通过村庄告示牌和储物柜给对方传送消息或是储存物品。
+        </div>
+        <div
+          id="secondaryPage"
+          class="bcc animate__animated animate__bounceInDown"
+          style="display: none"
+        >
+          <img
+            src="https://w.wallhaven.cc/full/q2/wallhaven-q269m7.png"
+            width="200"
+            height="250"
+            alt="西施惠"
+          />
+          <div>
+            <strong>西施惠</strong> （日语：しずえ
+            Shizue，英语：Isabelle），生日为12月20日，是《动物森友会》系列的虚构角色之一，于2012年作品《来吧！动物森友会》中首次登场，原型为西施犬，担任玩家秘书。西施惠获得媒体人正面评价，成为《动物森友会》最知名角色以及事实上的吉祥物。她在《动物森友会》以外的圈子都享有名气，还成为了跨界格斗游戏《任天堂明星大乱斗
+            特别版》的玩家角色。
+            <h4>在游戏中的工作</h4>
+            西施惠在《集合啦！动物森友会》中也是公共服务处的职员，与狸猫“狸克”共同掌管岛屿上的事务，而狸克掌管“建筑咨询柜台”。她会在玩家进入游戏时进行“每日广播”，告知游戏更新消息、特殊节庆活动等。在游戏中，她会坐在狸克身旁的“玩家柜台”提供服务，担任“玩家秘书”。玩家可向她提交岛屿旗帜设计、创作岛屿音乐、询问岛屿评价，或对特定NPC提出投诉，她会连络该NPC，请其改善不当行为。当特定NPC被投诉多次之后，会提高其离开岛屿的几率。
+            <h4>构思</h4>
+            西施惠是金毛西施犬[1]，日文名为Shizue[2]。《动物森友会》的设计者希望扮演市长的玩家能够至少拒绝西施惠举办庆典的邀约一次，好让他们为这个决定难过[3]。游戏制作人江口胜也及《来吧！动物森友会》监督京极彩都欣赏西施惠，胜也欣赏她笑容可掬、待人亲切，有时还笨笨的[4][5]。
+            西施惠在《任天堂明星大乱斗
+            特别版》中的形象改编自同为《动物森友会》的角色村民。然而，《大乱斗》系列的监督樱井政博没有把西施惠打造成村民的“回音斗士”（与其他人物略显不同的角色），认为她在《来吧！动物森友会》中的各种动画及她的身材已经建基于角色模型，而非《动物森友会》早期作品中的角色模型[6]。
+            <h4>出场</h4>
+            西施惠与她的孪生兄弟西施德于2012年作品《来吧！动物森友会》中首次亮相，在游戏中担任玩家所扮演的小镇市长的秘书，协助玩家完成各种任务。自此，她出现在《动物森友会》系列的各个作品中，包括《动物森友会
+            快乐之家设计师》、《动物森友会 amiibo节日》、《动物森友会
+            口袋露营广场》和《集合啦！动物森友会》。
+            除了《动物森友会》，西施惠还亮相《任天堂明星大乱斗》系列，首次在《任天堂明星大乱斗3DS/Wii
+            U》中以“辅助模型角色”和“助手奖杯”形式出现，后来于任天堂Switch平台的续作《任天堂明星大乱斗
+            特别版》正式成为玩家角色。另外，她以追加下载车手的身份出现在Wii
+            U游戏《马力欧卡丁车8》，以及该作品的任天堂Switch移植版《马力欧卡丁车8
+            豪华版》中[7]。玩家在《超级马力欧创作家》及《怪物猎人4终极版》中可选用西施惠的服装[8]。任天堂还推出了西施惠的Amiibo游戏互动实物手办，其中两款隶属于《动物森友会》生产线，一款隶属于《任天堂明星大乱斗》生产线，五款属于《动物森友会》Amiibo卡片[9]。
+          </div>
+        </div>
+        <div
+          id="miaoPage"
+          class="bcc animate__animated animate__bounceInDown"
+          style="display: none"
+        >
+          <img
+            src="https://w.wallhaven.cc/full/m9/wallhaven-m9o8qm.jpg"
+            width="200"
+            height="250"
+            alt="埃及猫"
+          />
+          <div>
+            <strong>艳后</strong> （日语：しずえ
+            英文的名字叫作Ankha。在动森中文版里，根据它的外形，把它翻译成了艳后。埃及猫的头上有一个蛇首黄金冠，这让人联想到了埃及，而猫咪的造成也和埃及艳后非常相像，性格也属于御姐型的，非常有特色，所以有了埃及猫之称。
+            <h4>在游戏中</h4>
+            艳后是一只海蓝金条纹的猫。她的眼妆仿效埃及皇室风格：环绕着眼睛，并向下外侧延伸至眼角。她眨眼时可以看到橘色眼影。她的大黑瞳仰望着上方，嘴角始终弯曲成一个不悦的表情，即使她开心的时候也是如此。她的蛇冠头饰是一条垂直的金色埃及眼镜蛇，上面有蓝色条纹。在城市人中，她的风格略有不同，她没有常规的法老头冠，而是换成了一个圆球形的圣甲虫头饰，但在来吧中又改回了头冠。
+            <h4>构思</h4>
+            她是名笼罩在神秘面纱之下的女性。
+            虽然充满光泽的肌肤闪闪发亮，但据说她其实已经活了三千年……
+          </div>
+        </div>
+
+        <div
+          id="dogPage"
+          class="bcc animate__animated animate__bounceIn"
+          style="display: none; flex-direction: column; align-items: center"
+        >
+          <img
+            src="https://w.wallhaven.cc/full/k7/wallhaven-k7jzyd.png"
+            width="800"
+            height="400"
+            style="padding-top: 10px"
+            alt="一堆猫"
+          />
+          <div>
+            在这里你可以找到所有413种动物，它们可能会成为你在《动物森友会》中岛屿的居民。
+            游戏开始时，两个随机的带有“运动”和“大姐姐”性格的居民将和你一起搬到岛上。在接下来的游戏进程中，“普通”、“悠闲”和“元气”性格的居民将搬到你的岛上，而露营地的第一位居民总是“自恋”。
+            要想让更多的居民搬到你的岛上，你需要先在狸克的服务中心购买房屋建筑套件，并将它们放在你的岛上。你的岛上最多可以住10位居民。当你购买第10个房屋建筑套件时，狸克会告诉你这将是最后一块新的土地。如果你有至少六位居民，居民可以搬走，这样另一位居民就可以搬进来。如果你的一个居民搬走了，你就有一块空地，你应该在那天邀请一个新的居民，如果你不希望这块地在接下来的几天里被随机分配给一个居民。
+            如果你和你的居民交谈并给他们礼物，你们的友谊就会提高。然后他们会给你发送邮件或者给你一些礼物（比如他们的照片）。
+            如果居民不是早起或者熬夜，他们的醒着的时间取决于他们的性格。
+          </div>
+        </div>
+        <div id="nullPage"></div>
+      </div>
+    </div>
+
+    <!-- 添加多个圆形透明发光的圆点 -->
+
+    <!-- 添加更多的圆点 -->
+
+    <script>
+      function showPage(page) {
+        // 隐藏所有页面内容
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("dogPage").style.display = "none";
+
+        document.getElementById("miaoPage").style.display = "none";
+
+        document.getElementById("secondaryPage").style.display = "none";
+
+        // 根据参数显示对应的页面内容
+        document.getElementById(page + "Page").style.display = "flex";
+
+        // 移除所有菜单项的 active 类
+        const menuItems = document.querySelectorAll(".menu div");
+
+        menuItems.forEach((item) => {
+          console.log(item);
+          item.classList.remove("active");
+        });
+        // 添加 active 类到被点击的菜单项
+        event.target.classList.add("active");
+      }
+      // 生成随机数函数
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // 创建20个粒子
+      for (let i = 0; i < getRandom(30, 60); i++) {
+        // 创建 div 元素
+        const particle = document.createElement("div");
+        // 添加类名 particle
+        particle.classList.add("particle");
+        // 随机设置 top 和 left 值
+        particle.style.top = getRandom(0, window.innerHeight - 20) + "px";
+        particle.style.left = getRandom(0, window.innerWidth - 20) + "px";
+        // 行内样式
+        particle.style.backgroundColor = ` rgb(255, 255, 0,${getRandom(
+          0.2,
+          0.7
+        )})`;
+        // "rgba(255, 255, 0," +getRandom(0.01, 0.7) + ");";
+
+        // 随机分配类名，有些类共享相同的动画
+        const animationClass = "particle" + Math.floor(getRandom(1, 8));
+        particle.classList.add(animationClass);
+
+        // 将粒子添加到 body 中
+        document.body.appendChild(particle);
+      }
+    </script>
+  </body>
+</html>
